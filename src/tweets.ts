@@ -191,6 +191,7 @@ export interface Tweet {
   urls: string[];
   userId?: string;
   username?: string;
+  userAvatar?: string;
   videos: Video[];
   views?: number;
   sensitiveContent?: boolean;

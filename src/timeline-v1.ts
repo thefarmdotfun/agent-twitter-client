@@ -1,4 +1,4 @@
-import { LegacyUserRaw, parseProfile, Profile } from './profile';
+import { getAvatarOriginalSizeUrl, LegacyUserRaw, parseProfile, Profile } from './profile';
 import { parseMediaGroups, reconstructTweetHtml } from './timeline-tweet-util';
 import { PlaceRaw, Tweet } from './tweets';
 import { isFieldDefined } from './type-util';
@@ -331,6 +331,7 @@ function parseTimelineTweet(
       .map((url) => url.expanded_url),
     userId: tweet.user_id_str,
     username: user.screen_name,
+    userAvatar: getAvatarOriginalSizeUrl(user.profile_image_url_https),
     videos,
   };
 

@@ -1,4 +1,4 @@
-import { LegacyUserRaw } from './profile';
+import { getAvatarOriginalSizeUrl, LegacyUserRaw } from './profile';
 import { parseMediaGroups, reconstructTweetHtml } from './timeline-tweet-util';
 import {
   LegacyTweetRaw,
@@ -166,6 +166,7 @@ export function parseLegacyTweet(
       .map((url) => url.expanded_url),
     userId: tweet.user_id_str,
     username: user.screen_name,
+    userAvatar: getAvatarOriginalSizeUrl(user.profile_image_url_https),
     videos,
     isQuoted: false,
     isReply: false,

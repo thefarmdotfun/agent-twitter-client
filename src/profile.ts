@@ -79,7 +79,7 @@ export interface UserRaw {
   errors?: TwitterApiErrorRaw[];
 }
 
-function getAvatarOriginalSizeUrl(avatarUrl: string | undefined) {
+export function getAvatarOriginalSizeUrl(avatarUrl: string | undefined) {
   return avatarUrl ? avatarUrl.replace('_normal', '') : undefined;
 }
 
